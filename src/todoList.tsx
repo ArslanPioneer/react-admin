@@ -3,7 +3,7 @@ import { Input, Button, List, Typography } from "antd";
 import { TodoListState } from "./store/type";
 import { connect } from "react-redux";
 import { changeInputValue, addTodoList, deleteTodoList } from "./store/action";
-
+import "./todoList.less";
 export interface TodoListProps {
   inputValue?: string;
   todoList: string[];
@@ -25,6 +25,7 @@ const TodoList: React.FC<TodoListProps> = ({
         value={inputValue}
         onChange={changeInputValue}
         style={{ width: "500px" }}
+        className="inputStyle"
       />
       <Button type="primary" onClick={addTodoList}>
         Add

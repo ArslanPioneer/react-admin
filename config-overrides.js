@@ -5,5 +5,6 @@ module.exports = override(
     libraryName: "antd",
     libraryDirectory: "es",
     style: "css"
-  })
+  }),
+  addLessLoader()
 );

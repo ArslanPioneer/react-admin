@@ -19,7 +19,6 @@ const reducer = (state = defaultState, action: TodoListAction) => {
         inputValue: action.payload
       };
     case ADD_TODO_LIST:
-      console.log(action);
       return {
         ...state,
         inputValue: "",
