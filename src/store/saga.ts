@@ -1,6 +1,5 @@
-import { take, put, fork, call } from "redux-saga/effects";
+import { take, fork, call } from "redux-saga/effects";
 import { ADD_TODO_LIST } from "./type";
-import { addTodoList } from "./action";
 
 export const delay = (ms: number) =>
   new Promise(resolve => setTimeout(resolve, ms));

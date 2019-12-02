@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import TodoList from "./todoList";
+import Admin from "./admin";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import store from "./store";
 
 ReactDOM.render(
   <Provider store={store}>
-    <TodoList />
+    <Admin />
   </Provider>,
   document.getElementById("root")
 );
