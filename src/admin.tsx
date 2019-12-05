@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import NavLeft from "../src/components/NavLeft";
+import Home from "../src/pages/Home";
 import "./style/common.less";
 
 const Admin: React.FC = () => {
@@ -13,7 +14,9 @@ const Admin: React.FC = () => {
       </Col>
       <Col span={21} className="main">
         <Header />
-        <Row>content</Row>
+        <Row>
+          <Home />
+        </Row>
         <Footer />
       </Col>
     </Row>

@@ -1,11 +1,13 @@
 import React from "react";
 import { Row, Col } from "antd";
-
+import "./index.less";
 const Footer: React.FC = () => {
   return (
-    <Row>
-      <Col span={21}>footer</Col>
-    </Row>
+    <div className="footer">
+      <Row>
+        <Col span={24}>中后台生产管理系统</Col>
+      </Row>
+    </div>
   );
 };
 
