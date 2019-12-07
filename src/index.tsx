@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import TodoList from "./todoList";
 import Admin from "./admin";
 import * as serviceWorker from "./serviceWorker";
+import IRouter from "./router/router";
 import { Provider } from "react-redux";
 import store from "./store";
 
 ReactDOM.render(
   <Provider store={store}>
-    <Admin />
+    <IRouter />
   </Provider>,
   document.getElementById("root")
 );
