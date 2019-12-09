@@ -3,8 +3,13 @@ import { Row, Col } from "antd";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import NavLeft from "../src/components/NavLeft";
-import "./style/common.less";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import "./style/Layout.less";
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 import routes from "../src/config/routerConfig";
 // import IRouter from "./router/router";
 class Admin extends Component {
@@ -16,7 +21,7 @@ class Admin extends Component {
         </Col>
         <Col span={21} className="main">
           <Header />
-          <Row>
+          <Row className="content">
             <Router>
               <Switch>
                 {routes.map(item => {
@@ -29,6 +34,7 @@ class Admin extends Component {
                     ></Route>
                   );
                 })}
+                <Redirect to="/404" />
               </Switch>
             </Router>
           </Row>

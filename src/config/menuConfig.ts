@@ -19,6 +19,15 @@ const menuList = [
         key: "/home/ui/loading"
       }
     ]
+  },
+  {
+    title: "Todo",
+    key: "/home/todoList",
+    icon: "edit"
+  },
+  {
+    title: "table",
+    key: "/home/table"
   }
 ];
 export default menuList;

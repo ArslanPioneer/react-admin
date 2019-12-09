@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import TodoList from "./todoList";
-import Admin from "./admin";
+
 import * as serviceWorker from "./serviceWorker";
 import IRouter from "./router/router";
 import { Provider } from "react-redux";

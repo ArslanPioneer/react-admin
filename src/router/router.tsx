@@ -6,7 +6,7 @@ import {
   Link,
   RouteComponentProps
 } from "react-router-dom";
-import TodoList from "../todoList";
+
 import Admin from "../admin";
 import NotFound404 from "../pages/others/404";
 const IRouter: React.FC = () => {
@@ -14,7 +14,7 @@ const IRouter: React.FC = () => {
     <Router>
       <Switch>
         <Route path="/home" component={Admin}></Route>
-        <Route path="/todo" component={TodoList}></Route>
+
         <Route path="/404" component={NotFound404}></Route>
       </Switch>
     </Router>

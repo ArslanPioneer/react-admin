@@ -11,8 +11,8 @@ module.exports = override(
     libraryDirectory: "es",
     style: "css"
   }),
-  addLessLoader(),
   addWebpackAlias({
     ["@"]: path.resolve(__dirname, "src")
-  })
+  }),
+  addLessLoader()
 );
