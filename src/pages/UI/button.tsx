@@ -14,6 +14,7 @@ const Buttons: React.FC = () => {
           <Button type="danger">Danger</Button>
           <Button type="link">Link</Button>
           <Button type="ghost">ghost</Button>
+          <Button type="ghost">ghost</Button>
         </Col>
       </Row>
       <Row className="basicRow">
