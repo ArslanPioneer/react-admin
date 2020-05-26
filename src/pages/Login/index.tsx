@@ -3,11 +3,19 @@ import { Form, Icon, Input, Button, message } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import { RouteComponentProps } from "react-router-dom";
 import "./Login.less";
+import { LOGIN } from "../../api/login";
 export interface LoginProps extends FormComponentProps, RouteComponentProps {}
 const Login: React.FC<LoginProps> = ({ form, history }) => {
   const { getFieldDecorator } = form;
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    LOGIN()
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     form.validateFields((err, value) => {
       if (!err) {
         history.push("/home");
@@ -20,7 +28,7 @@ const Login: React.FC<LoginProps> = ({ form, history }) => {
       <Form className="loginForm" onSubmit={handleSubmit}>
         <Form.Item>
           {getFieldDecorator("username", {
-            rules: [{ required: true, message: "用户名" }]
+            rules: [{ required: true, message: "用户名" }],
           })(
             <Input
               prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
@@ -30,7 +38,7 @@ const Login: React.FC<LoginProps> = ({ form, history }) => {
         </Form.Item>
         <Form.Item>
           {getFieldDecorator("password", {
-            rules: [{ required: true, message: "密码" }]
+            rules: [{ required: true, message: "密码" }],
           })(
             <Input
               prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}

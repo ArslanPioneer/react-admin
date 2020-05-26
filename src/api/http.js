@@ -1,29 +1,29 @@
 import axios from "axios";
 import qs from "qs";
 import { Spin, message } from "antd";
-let Base = "http://www.arslan.com";
+let Base = "http://localhost:9000";
 
 const instanceRequest = axios.create({
   baseURL: Base,
-  timeout: 5000
+  timeout: 5000,
 });
 
 //HTTP请求拦截器
 instanceRequest.interceptors.request.use(
-  config => {
-    <Spin spinning={true} />;
+  (config) => {
+    //<Spin spinning={true} />;
     return config;
   },
-  error => {
+  (error) => {
     return Promise.reject(error);
   }
 );
 
 //HTTP响应拦截器
 instanceRequest.interceptors.response.use(
-  response => {
+  (response) => {
     if (response.status === 200) {
-      <Spin spinning={false} />;
+      //<Spin spinning={false} />;
       if (response.data.code === 200) {
         return Promise.resolve(response.data);
       } else {
@@ -34,7 +34,7 @@ instanceRequest.interceptors.response.use(
       return Promise.reject(response);
     }
   },
-  error => {
+  (error) => {
     message.error("失败");
     return Promise.reject(error.response);
   }
@@ -50,17 +50,17 @@ const HTTP = {
         .post(url, qs.stringify(data), {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
-            Accept: "application/json"
-          }
+            Accept: "application/json",
+          },
         })
-        .then(res => {
+        .then((res) => {
           resolve(res);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
-  }
+  },
 };
 
 export default HTTP;
