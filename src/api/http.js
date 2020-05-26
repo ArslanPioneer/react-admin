@@ -1,7 +1,7 @@
 import axios from "axios";
 import qs from "qs";
 import { Spin, message } from "antd";
-let Base = "http://localhost:9000";
+let Base = "http://119.45.0.151:9000/";
 
 const instanceRequest = axios.create({
   baseURL: Base,
