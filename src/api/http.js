@@ -1,7 +1,7 @@
 import axios from "axios";
 import qs from "qs";
 import { Spin, message } from "antd";
-let Base = "http://119.45.0.151:9000";
+let Base = "http://localhost:9000";
 
 const instanceRequest = axios.create({
   baseURL: Base,
@@ -28,7 +28,7 @@ instanceRequest.interceptors.response.use(
         return Promise.resolve(response.data);
       } else {
         message.success("成功");
-        return Promise.resolve(response.data);
+        return Promise.resolve(response);
       }
     } else {
       return Promise.reject(response);
@@ -54,10 +54,10 @@ const HTTP = {
           },
         })
         .then((res) => {
-          resolve(res);
+          resolve(res.data);
         })
         .catch((error) => {
-          reject(error);
+          reject(error.data);
         });
     });
   },
