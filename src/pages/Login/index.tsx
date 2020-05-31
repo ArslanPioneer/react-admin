@@ -9,7 +9,6 @@ const Login: React.FC<LoginProps> = ({ form, history }) => {
   const { getFieldDecorator } = form;
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
     form.validateFields((err, value) => {
       if (!err) {
         let params = {
