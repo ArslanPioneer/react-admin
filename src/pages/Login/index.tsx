@@ -9,30 +9,39 @@ const Login: React.FC<LoginProps> = ({ form, history }) => {
   const { getFieldDecorator } = form;
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    LOGIN()
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
     form.validateFields((err, value) => {
       if (!err) {
-        history.push("/home");
-        message.success("登录成功");
+        let params = {
+          email: value.email,
+          password: value.password,
+        };
+        LOGIN(params)
+          .then((res) => {
+            console.log(res);
+            history.push("/home");
+            message.success("登录成功");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       }
     });
+  };
+
+  const handleRegister = (e: any) => {
+    e.preventDefault();
+    history.push("/Register");
   };
   return (
     <div className="loginContainer">
       <Form className="loginForm" onSubmit={handleSubmit}>
         <Form.Item>
-          {getFieldDecorator("username", {
-            rules: [{ required: true, message: "用户名" }],
+          {getFieldDecorator("email", {
+            rules: [{ required: true, message: "邮箱名" }],
           })(
             <Input
               prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-              placeholder="用户名"
+              placeholder="邮箱名"
             />
           )}
         </Form.Item>
@@ -54,6 +63,13 @@ const Login: React.FC<LoginProps> = ({ form, history }) => {
             className="login-form-button"
           >
             登录
+          </Button>
+          <Button
+            type="danger"
+            className="login-form-button"
+            onClick={handleRegister}
+          >
+            注册
           </Button>
         </Form.Item>
       </Form>

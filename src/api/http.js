@@ -1,10 +1,17 @@
 import axios from "axios";
 import qs from "qs";
 import { Spin, message } from "antd";
-let Base = "http://119.45.0.151:9000";
 
+let baseUrl;
+
+if (process.env.NODE_ENV === "development") {
+  baseUrl = "http://localhost:9000";
+}
+if (process.env.NODE_ENV === "production") {
+  baseUrl = "http://119.45.0.151:9000";
+}
 const instanceRequest = axios.create({
-  baseURL: Base,
+  baseURL: baseUrl,
   timeout: 5000,
 });
 
@@ -27,15 +34,15 @@ instanceRequest.interceptors.response.use(
       if (response.data.code === 200) {
         return Promise.resolve(response.data);
       } else {
-        message.success("成功");
-        return Promise.resolve(response.data);
+        //message.success("成功");
+        return Promise.resolve(response);
       }
     } else {
       return Promise.reject(response);
     }
   },
   (error) => {
-    message.error("失败");
+    //message.error("失败");
     return Promise.reject(error.response);
   }
 );
@@ -54,10 +61,10 @@ const HTTP = {
           },
         })
         .then((res) => {
-          resolve(res);
+          resolve(res.data);
         })
         .catch((error) => {
-          reject(error);
+          reject(error.data);
         });
     });
   },
