@@ -7,3 +7,7 @@ export const LOGIN = (params) => {
 export const REGISTER = (params) => {
   return HTTP.Post(`/v1/user/register`, params);
 };
+
+export const GETUSERList = (params) => {
+  return HTTP.Post(`/v1/user/getUserList`, params);
+};

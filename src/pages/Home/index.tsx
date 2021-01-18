@@ -23,23 +23,6 @@ const Home: React.FC = () => {
           意
         </Col>
       </Row>
-      <Row className="home" gutter={24}>
-        <Col span={4} className="card">
-          笔
-        </Col>
-        <Col span={4} className="card">
-          下
-        </Col>
-        <Col span={4} className="card">
-          纵
-        </Col>
-        <Col span={4} className="card">
-          横
-        </Col>
-        <Col span={4} className="card">
-          气
-        </Col>
-      </Row>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import axios from "axios";
 import qs from "qs";
-import { Spin, message } from "antd";
+// import { Spin, message } from "antd";
 
 let baseUrl;
 

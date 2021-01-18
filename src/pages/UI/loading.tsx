@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Row, Col, Spin } from "antd";
+import { Row, Col, Spin } from "antd";
 import CustomBreadcrumb from "../../components/BreadCumb";
 import "../../style/common.less";
 const Loading: React.FC = () => {

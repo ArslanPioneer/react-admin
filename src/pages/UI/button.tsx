@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Row, Col, Card } from "antd";
+import { Button, Row, Col } from "antd";
 import CustomBreadcrumb from "../../components/BreadCumb";
 import "../../style/common.less";
 const Buttons: React.FC = () => {
