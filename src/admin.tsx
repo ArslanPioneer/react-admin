@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Row, Col } from "antd";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
@@ -8,7 +8,7 @@ import {
   HashRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 import routes from "../src/config/routerConfig";
 import { RouteComponentProps } from "react-router-dom";
@@ -25,7 +25,7 @@ const Admin: React.FC<AdminProps> = ({ history, location, match }) => {
         <Row className="content">
           <Router>
             <Switch>
-              {routes.map(item => {
+              {routes.map((item) => {
                 return (
                   <Route
                     key={item.path}

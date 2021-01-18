@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Form, Icon, Input, Button, message, Row, Col, Tooltip } from "antd";
+import React, { useState } from "react";
+import { Form, Icon, Input, Button, message, Tooltip } from "antd";
 import { FormComponentProps } from "antd/lib/form";
 import { RouteComponentProps } from "react-router-dom";
 import "./Register.less";
@@ -59,14 +59,14 @@ const Register: React.FC<RegisterProps> = ({ form, history }) => {
         };
         REGISTER(params)
           .then((res) => {
-            console.log(res);
             if (res.error_code === 0) {
               message.success(res.msg);
               history.push("/Login");
             }
           })
           .catch((err) => {
-            console.log(err);
+            history.push("/Login");
+            //message.error(err.msg);
           });
       }
     });
@@ -142,7 +142,7 @@ const Register: React.FC<RegisterProps> = ({ form, history }) => {
 
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">
-            Register
+            注册
           </Button>
         </Form.Item>
       </Form>

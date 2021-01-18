@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Menu, Icon, Button } from "antd";
-import { NavLink, RouteComponentProps } from "react-router-dom";
+import { Menu, Icon } from "antd";
+import { NavLink } from "react-router-dom";
 import menuList from "../../config/menuConfig";
 const { SubMenu } = Menu;
 
 const NavLeft: React.FC = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  // const [collapsed, setCollapsed] = useState(false);
   const [menuData, setMenuData] = useState(menuList);
   const [openKeys, setOpenKeys] = useState("");
   useEffect(() => {});
@@ -69,7 +69,7 @@ const NavLeft: React.FC = () => {
       <Menu
         mode="inline"
         theme="dark"
-        // onClick={clickMenu}
+        onClick={clickMenu}
         // openKeys={[openKeys]}
         // onOpenChange={openChange}
       >
