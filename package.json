@@ -10,7 +10,7 @@
     "@types/react-redux": "^7.1.5",
     "@types/react-router-dom": "^5.1.3",
     "antd": "^3.25.2",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "babel-plugin-import": "^1.12.2",
     "customize-cra": "^0.9.1",
     "less": "^3.10.3",
